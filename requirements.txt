@@ -1,0 +1,9 @@
+# Python 3.10-3.12; install the appropriate PyTorch 2.5.1 build separately.
+numpy>=1.26,<2.1
+scipy>=1.13,<1.16
+scikit-image>=0.23,<0.26
+SimpleITK>=2.5,<2.6
+nibabel>=5.3,<5.4
+Pillow>=10.3,<12
+matplotlib>=3.8,<3.11
+pytest>=7.4,<9

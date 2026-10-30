@@ -1,0 +1,47 @@
+{
+  "checkpoint_sha256": "8e26e06eab6f58ed59d37cb6ac092d85c45a4ddcf78593f85607ba6b193700aa",
+  "fresh_preparation": {
+    "byte_identical_npz_containers": 0,
+    "frames": 2000,
+    "frames_with_identical_image_mask_and_valid_arrays": 2000,
+    "max_image_value_difference": 0.0,
+    "patients": 500
+  },
+  "numeric_comparison_tolerance": 1e-12,
+  "packaged_model_equivalence": {
+    "identical_probability_and_mask_files": {
+      "predictions": 200,
+      "predictions_portability": 200
+    },
+    "max_probability_difference": 0.0,
+    "native_frames": 200
+  },
+  "patient_results_match_previously_validated_analysis": true,
+  "scope": "Selected model packaging and workflow reproduction; no new checkpoint selection or test-set tuning.",
+  "status": "passed",
+  "two_environment_geometry_reproduction": {
+    "exact_ef_matches": 50,
+    "failed_patients": 0,
+    "mae_pp": 0.0
+  },
+  "unit_tests": {
+    "failed": 0,
+    "junit_sha256": "8953808be1fc6d22c599693f898453aa517904c8373449402e9ade66a1a673d3",
+    "passed": 34
+  },
+  "visual_review": {
+    "largest_error_patients": [
+      "patient0217",
+      "patient0241",
+      "patient0248"
+    ],
+    "native_overlays": 25,
+    "overview_patient": "patient0269",
+    "png_figures": 6,
+    "representative_patients": [
+      "patient0027",
+      "patient0221",
+      "patient0240"
+    ]
+  }
+}

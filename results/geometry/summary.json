@@ -1,0 +1,10 @@
+{
+  "attempted_patients": 50,
+  "exact_ef_matches": 50,
+  "failed_patients": 0,
+  "mae_pp": 0.0,
+  "notebook_sha256": "09cef7321d43a4986089563b088af1ffd18a93de5c545e84a27f01311c3a4c0c",
+  "split": "test",
+  "valid_patients": 50,
+  "volume_reference": "These are original-notebook GT-mask-derived volumes, not independent clinical volume labels."
+}

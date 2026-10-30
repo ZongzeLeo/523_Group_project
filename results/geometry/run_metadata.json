@@ -1,0 +1,23 @@
+{
+  "artifact_sha256": {
+    "patients.csv": "836e91cb6567c9184bc50199be3b1071e4ae07683a212dc55221aaeac0102317",
+    "summary.json": "012a5f23aef15905248c654eebcfa5f0d1e65dfcac2df604d1f460965a5b08b1"
+  },
+  "code_sha256": {
+    "publisher.py": "ac9e746fffb6b8699b333d6b2aceb8e8e905c1806aa3779e426bc5435901ede2",
+    "reproduce_publisher.py": "64eda77e00d813fd59a464e8f2db54a831a3681b878e418a0ee6225a36a5c943"
+  },
+  "data_identity": {
+    "preprocessing.json": "b3b26be0cad10824b18ae57a89ed7363f3eea40a73a06ef0ad71a014823fdeab",
+    "source_hashes.json": "6658477ab07289e79cc34ee9832060de0a7f78c87eeaca24a5fecef4d8d22224",
+    "splits.csv": "3a682c50f79c665a6f7aafa2f63322a8fae90de1ccca605742fbb31684781de8"
+  },
+  "notebook_sha256": "09cef7321d43a4986089563b088af1ffd18a93de5c545e84a27f01311c3a4c0c",
+  "prepared_metadata_sha256": "ed825a098280a086e9d49a5805aa2798b9d72986cd20477606afb0dcce92b22e",
+  "versions": {
+    "numpy": "1.26.4",
+    "pillow": "10.3.0",
+    "python": "3.12.3",
+    "scikit_image": "0.23.2"
+  }
+}

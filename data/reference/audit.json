@@ -1,0 +1,193 @@
+{
+  "checks": [
+    "patient uniqueness and split disjointness",
+    "four image/mask pairs per patient",
+    "source SHA-256 receipts when supplied",
+    "image/mask size, origin, direction and spacing agreement with explicit mm units",
+    "finite intensity range and nonconstant images",
+    "integer mask labels in 0..3 and nonempty LV label 1",
+    "duplicate pixel content across patients, blocking if across splits",
+    "CFG phase-index ranges and EF consistency"
+  ],
+  "cross_patient_duplicate_image_groups": [
+    {
+      "code": "duplicate_pixels_within_split",
+      "detail": "Identical image pixels under distinct patient IDs; retained only if confined to one split.",
+      "frames": [
+        {
+          "frame_id": "patient0033_4CH_ED",
+          "patient_id": "patient0033",
+          "split": "train"
+        },
+        {
+          "frame_id": "patient0068_4CH_ED",
+          "patient_id": "patient0068",
+          "split": "train"
+        }
+      ],
+      "image_pixels_sha256": "ab9ba2dd18b80302c1564411a7276152819f2af0288ab3f2b074babc81e3a1cc"
+    }
+  ],
+  "cross_split_duplicate_image_groups": 0,
+  "ef_groups_by_split": {
+    "test": {
+      "ge55": 10,
+      "gt45_lt55": 17,
+      "le45": 23
+    },
+    "train": {
+      "ge55": 75,
+      "gt45_lt55": 126,
+      "le45": 199
+    },
+    "validation": {
+      "ge55": 10,
+      "gt45_lt55": 13,
+      "le45": 27
+    }
+  },
+  "errors": [],
+  "expected_patients": 500,
+  "frame_count": 2000,
+  "frame_counts_by_split": {
+    "test": 200,
+    "train": 1600,
+    "validation": 200
+  },
+  "image_quality_by_split": {
+    "test": {
+      "Good": 94,
+      "Medium": 76,
+      "Poor": 30
+    },
+    "train": {
+      "Good": 816,
+      "Medium": 604,
+      "Poor": 180
+    },
+    "validation": {
+      "Good": 100,
+      "Medium": 78,
+      "Poor": 22
+    }
+  },
+  "limitations": [
+    "Named ED/ES snapshots are used directly; CFG indices are advisory and not cross-checked against cine sequences.",
+    "Pixel-content duplicate detection does not establish independence beyond the publisher's patient identifiers.",
+    "All image-quality groups are retained; quality is recorded for downstream stratification."
+  ],
+  "missing_reference_edv": 500,
+  "missing_reference_ef": 0,
+  "missing_reference_esv": 500,
+  "partial_population": false,
+  "patient_count": 500,
+  "patient_counts_by_split": {
+    "test": 50,
+    "train": 400,
+    "validation": 50
+  },
+  "patient_overlap_between_splits": 0,
+  "reference_volume_note": "No standalone EDV/ESV scalar reference fields in the CFG source; geometry is a later stage.",
+  "shape_yx_counts": {
+    "292x354": 8,
+    "292x355": 4,
+    "325x323": 4,
+    "325x394": 22,
+    "325x458": 2,
+    "357x355": 8,
+    "357x382": 10,
+    "357x433": 54,
+    "357x457": 2,
+    "389x387": 4,
+    "389x388": 6,
+    "389x472": 12,
+    "389x473": 8,
+    "389x499": 4,
+    "389x549": 4,
+    "390x417": 16,
+    "390x445": 4,
+    "390x472": 74,
+    "390x616": 2,
+    "390x673": 4,
+    "422x387": 4,
+    "422x420": 6,
+    "422x450": 2,
+    "422x451": 16,
+    "422x482": 16,
+    "422x511": 8,
+    "422x512": 198,
+    "422x540": 10,
+    "422x541": 6,
+    "422x595": 18,
+    "422x729": 2,
+    "454x417": 2,
+    "454x486": 8,
+    "454x487": 4,
+    "454x519": 6,
+    "454x550": 4,
+    "454x551": 226,
+    "454x582": 8,
+    "454x640": 4,
+    "454x641": 10,
+    "454x719": 4,
+    "454x785": 2,
+    "487x521": 6,
+    "487x556": 8,
+    "487x590": 144,
+    "487x591": 90,
+    "487x623": 4,
+    "487x624": 8,
+    "487x686": 10,
+    "487x842": 2,
+    "519x554": 2,
+    "519x593": 6,
+    "519x630": 286,
+    "519x665": 16,
+    "519x732": 16,
+    "519x898": 2,
+    "551x669": 94,
+    "551x707": 6,
+    "552x630": 4,
+    "552x669": 144,
+    "552x706": 2,
+    "552x778": 2,
+    "552x873": 2,
+    "584x667": 4,
+    "584x708": 122,
+    "584x748": 6,
+    "616x747": 38,
+    "616x748": 98,
+    "616x869": 10,
+    "617x746": 2,
+    "649x787": 36,
+    "649x915": 2,
+    "714x865": 8,
+    "973x1181": 4
+  },
+  "spacing_xy_mm_values": [
+    [
+      0.30799999833106995,
+      0.30799999833106995
+    ]
+  ],
+  "status": "passed",
+  "warnings": [
+    {
+      "code": "duplicate_pixels_within_split",
+      "detail": "Identical image pixels under distinct patient IDs; retained only if confined to one split.",
+      "frames": [
+        {
+          "frame_id": "patient0033_4CH_ED",
+          "patient_id": "patient0033",
+          "split": "train"
+        },
+        {
+          "frame_id": "patient0068_4CH_ED",
+          "patient_id": "patient0068",
+          "split": "train"
+        }
+      ],
+      "image_pixels_sha256": "ab9ba2dd18b80302c1564411a7276152819f2af0288ab3f2b074babc81e3a1cc"
+    }
+  ]
+}

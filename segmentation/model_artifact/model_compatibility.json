@@ -1,0 +1,19 @@
+{
+  "checkpoint_sha256": "8e26e06eab6f58ed59d37cb6ac092d85c45a4ddcf78593f85607ba6b193700aa",
+  "cuda": "11.8",
+  "data_identity": {
+    "preprocessing.json": "b3b26be0cad10824b18ae57a89ed7363f3eea40a73a06ef0ad71a014823fdeab",
+    "source_hashes.json": "6658477ab07289e79cc34ee9832060de0a7f78c87eeaca24a5fecef4d8d22224",
+    "splits.csv": "3a682c50f79c665a6f7aafa2f63322a8fae90de1ccca605742fbb31684781de8"
+  },
+  "identical_logits_between_original_and_packaged_model": true,
+  "identical_native_prediction_frames": 200,
+  "max_probability_difference": 0.0,
+  "packaged_model_sha256": "cea22fab45bc29855542eb961b8df80bb9b825c98a5906f942c254615533dbcd",
+  "reference_prediction_manifest_sha256": "93f731b39eba4bf7758d2c20b90306e745823f5227a8046393f17e26b3348b1d",
+  "scope": "Packaging equivalence of the selected checkpoint; original training metadata remains unchanged.",
+  "status": "verified",
+  "torch": "2.5.1",
+  "training_model_sha256": "a316bbeb8375370b97d4768b607852872f3779e1bb2cb6a0c93306f5defa6e26",
+  "validation_device": "NVIDIA GeForce RTX 4090"
+}

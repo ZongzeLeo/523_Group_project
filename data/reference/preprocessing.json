@@ -1,0 +1,12 @@
+{
+  "allow_partial": false,
+  "expected_patients": 500,
+  "lv_label": 1,
+  "normalization": "fixed image / 255",
+  "output_shape_yx": [
+    256,
+    256
+  ],
+  "resampling": "isotropic physical letterbox; linear images, nearest LV labels",
+  "schema_version": 1
+}

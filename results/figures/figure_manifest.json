@@ -1,0 +1,31 @@
+{
+  "analysis_metadata_sha256": "5ba557673b06b05d3da2487d01310b04b6bda6a2a4a2c2bd5d67322c37aad65c",
+  "artifact_sha256": {
+    "ef_agreement.png": "f54e80e95e7014d86b5a37b9751f30d695b380739a3e390b5c7f8b92c71a80f7",
+    "ef_agreement.svg": "a5d0581e37b4f37d3ebb458f4a0941fb34233a3d6e691dfd4939d11908d0803d",
+    "largest_ef_errors.png": "ff0f6bfb152548e43866198ff50d476c5d3c8c29e91fac61cbc7ce20dcdb6b59",
+    "largest_ef_errors.svg": "1844d63634871786cd484991703e35c2851f7418f565ff188095a0443612beaa",
+    "overview.png": "8933daf0152ef73dd413ec1692994d4b0a9fb58e542464c4801d4b8f6a92d3f4",
+    "overview.svg": "3432766aae667cfe40b2c5d0a38dc3a277b56b2601e7373107d1a1be95ef8c9f",
+    "prediction_examples.png": "c584f3ab281b476113547206cec93432943c54efb81abbd42aaaec25a1d9658e",
+    "prediction_examples.svg": "3dcda5968d5eb3eb636db343167f86080ecba4ea03049e6d04441f107580f75c",
+    "segmentation_metrics.png": "211009fb788d3016126327715f712e9a194a1c5ac74a3720c2a6a2e6aec8df16",
+    "segmentation_metrics.svg": "3ed64ffe6a1969e335c7a6b5dde69a68c5b71bf8ab5f6203652d875f34698025",
+    "training_history.png": "7fe3f06549fac22e457ed01a616061bbedbbc1ee86c63364ba2b5cee9bd53e13",
+    "training_history.svg": "1aa1d69e29c1af055d18e9d573c12e8afef1fd7c376ae2bbce1a6516cd8b8b51"
+  },
+  "expert_metadata_sha256": "ea3c1638e6feefcdf3bfc35cca7a6f91053c76156f81d477d19ec4dae2151bce",
+  "largest_error_patients": [
+    "patient0217",
+    "patient0241",
+    "patient0248"
+  ],
+  "overview_patient": "patient0269",
+  "plotting_code_sha256": "b91017e492e2d6512c206b4dd9bccca60b8ac421a62d30ae23fa3b3b2a8da0a3",
+  "representative_patients": [
+    "patient0027",
+    "patient0221",
+    "patient0240"
+  ],
+  "selection": "Closest to within-quality median absolute EF error; patient ID breaks ties. Overview: closest to median patient-mean Dice."
+}

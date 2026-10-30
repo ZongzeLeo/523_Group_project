@@ -1,0 +1,51 @@
+patient_id,split,method,reference_ef_group,image_quality,status,warnings,error,camus_reference_ef_pct,mean_frame_dice,mean_raw_frame_dice,predicted_edv_ml,gt_edv_ml,predicted_esv_ml,gt_esv_ml,predicted_ef_pct,gt_ef_pct,edv_error_vs_gt_ml,esv_error_vs_gt_ml,ef_error_vs_gt_pp,ef_error_vs_camus_pp
+patient0027,test,publisher_original,le45,Good,ok,Blowfish has been deprecated and will be removed in a future release;invalid value encountered in divide,,40.0,0.9551605397714529,0.9551605397714529,166,167.0,96,101.0,42,40.0,-1.0,-5.0,2.0,2.0
+patient0047,test,publisher_original,le45,Good,ok,Blowfish has been deprecated and will be removed in a future release;invalid value encountered in divide,,38.0,0.9410722895822671,0.9410722895822671,77,79.0,49,49.0,36,38.0,-2.0,0.0,-2.0,-2.0
+patient0051,test,publisher_original,le45,Good,ok,Blowfish has been deprecated and will be removed in a future release;invalid value encountered in divide,,29.0,0.9637502661693887,0.9637502661693887,117,119.0,88,85.0,25,29.0,-2.0,3.0,-4.0,-4.0
+patient0052,test,publisher_original,le45,Good,ok,Blowfish has been deprecated and will be removed in a future release;invalid value encountered in divide,,5.0,0.9681205653991447,0.9681205653991447,181,184.0,169,174.0,7,5.0,-3.0,-5.0,2.0,2.0
+patient0187,test,publisher_original,le45,Good,ok,invalid value encountered in divide,,38.0,0.9396629911438583,0.9396629911438583,81,74.0,52,46.0,36,38.0,7.0,6.0,-2.0,-2.0
+patient0189,test,publisher_original,ge55,Good,ok,invalid value encountered in divide,,69.0,0.9243048717215783,0.9243048717215783,54,48.0,15,15.0,72,69.0,6.0,0.0,3.0,3.0
+patient0191,test,publisher_original,le45,Good,ok,invalid value encountered in divide,,26.0,0.9542157297159796,0.9542157297159796,83,77.0,67,57.0,19,26.0,6.0,10.0,-7.0,-7.0
+patient0194,test,publisher_original,ge55,Good,ok,invalid value encountered in divide,,64.0,0.8837770536470999,0.8837770536470999,49,39.0,25,14.0,49,64.0,10.0,11.0,-15.0,-15.0
+patient0197,test,publisher_original,ge55,Good,ok,invalid value encountered in divide,,58.0,0.9705874274376198,0.9705874274376198,122,118.0,50,50.0,59,58.0,4.0,0.0,1.0,1.0
+patient0199,test,publisher_original,ge55,Good,ok,invalid value encountered in divide,,60.0,0.9349178137218584,0.9349178137218584,68,65.0,26,26.0,62,60.0,3.0,0.0,2.0,2.0
+patient0201,test,publisher_original,le45,Good,ok,invalid value encountered in divide,,42.0,0.967411297216705,0.967411297216705,167,159.0,100,92.0,40,42.0,8.0,8.0,-2.0,-2.0
+patient0208,test,publisher_original,le45,Good,ok,invalid value encountered in divide,,45.0,0.9535948705182669,0.9535948705182669,97,104.0,53,57.0,45,45.0,-7.0,-4.0,0.0,0.0
+patient0213,test,publisher_original,le45,Medium,ok,invalid value encountered in divide,,39.0,0.9356509129487244,0.9356509129487244,128,139.0,68,85.0,47,39.0,-11.0,-17.0,8.0,8.0
+patient0214,test,publisher_original,le45,Good,ok,invalid value encountered in divide,,44.0,0.9653836377137935,0.9653836377137935,101,111.0,58,62.0,43,44.0,-10.0,-4.0,-1.0,-1.0
+patient0215,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,52.0,0.9369371846162875,0.9369371846162875,48,46.0,24,22.0,50,52.0,2.0,2.0,-2.0,-2.0
+patient0217,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,50.0,0.8910380699032904,0.8910380699032904,72,76.0,56,38.0,22,50.0,-4.0,18.0,-28.0,-28.0
+patient0218,test,publisher_original,le45,Medium,ok,invalid value encountered in divide,,20.0,0.9502919242674299,0.9502919242674299,86,92.0,69,74.0,20,20.0,-6.0,-5.0,0.0,0.0
+patient0219,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,53.0,0.9582025508625991,0.9582025508625991,95,93.0,41,44.0,57,53.0,2.0,-3.0,4.0,4.0
+patient0220,test,publisher_original,gt45_lt55,Good,ok,invalid value encountered in divide,,48.0,0.9484282826713549,0.9484282826713549,112,108.0,56,56.0,50,48.0,4.0,0.0,2.0,2.0
+patient0221,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,52.0,0.9461612970463449,0.9461612970463449,132,125.0,60,60.0,55,52.0,7.0,0.0,3.0,3.0
+patient0223,test,publisher_original,ge55,Good,ok,invalid value encountered in divide,,57.0,0.9449561724537724,0.9449561724537724,63,70.0,30,30.0,52,57.0,-7.0,0.0,-5.0,-5.0
+patient0224,test,publisher_original,le45,Medium,ok,invalid value encountered in divide,,38.0,0.9543718501376233,0.9543718501376233,118,111.0,80,69.0,32,38.0,7.0,11.0,-6.0,-6.0
+patient0225,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,46.0,0.9470244521761353,0.9470244521761353,55,56.0,30,30.0,45,46.0,-1.0,0.0,-1.0,-1.0
+patient0226,test,publisher_original,ge55,Good,ok,invalid value encountered in divide,,60.0,0.9574739320151435,0.9574739320151435,106,113.0,47,45.0,56,60.0,-7.0,2.0,-4.0,-4.0
+patient0227,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,52.0,0.9333062362732121,0.9333062362732121,69,71.0,28,34.0,59,52.0,-2.0,-6.0,7.0,7.0
+patient0228,test,publisher_original,le45,Good,ok,invalid value encountered in divide,,39.0,0.9555839314015396,0.9555839314015396,110,117.0,71,71.0,35,39.0,-7.0,0.0,-4.0,-4.0
+patient0231,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,45.0,0.9079402410849248,0.9079402410849248,107,101.0,67,56.0,37,45.0,6.0,11.0,-8.0,-8.0
+patient0234,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,44.0,0.9188741391136804,0.9188741391136804,81,79.0,39,44.0,52,44.0,2.0,-5.0,8.0,8.0
+patient0237,test,publisher_original,ge55,Medium,ok,invalid value encountered in divide,,55.0,0.9405831410218565,0.9405831410218565,101,94.0,42,42.0,58,55.0,7.0,0.0,3.0,3.0
+patient0238,test,publisher_original,le45,Medium,ok,invalid value encountered in divide,,36.0,0.9663830902660291,0.9663830902660291,136,132.0,90,85.0,34,36.0,4.0,5.0,-2.0,-2.0
+patient0239,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,53.0,0.9062943808933869,0.9062943808933869,66,60.0,33,28.0,50,53.0,6.0,5.0,-3.0,-3.0
+patient0240,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,32.0,0.9168192466468081,0.9168192466468081,122,100.0,89,68.0,27,32.0,22.0,21.0,-5.0,-5.0
+patient0241,test,publisher_original,le45,Medium,ok,invalid value encountered in divide,,30.0,0.9442123490710304,0.9442123490710304,81,77.0,44,54.0,46,30.0,4.0,-10.0,16.0,16.0
+patient0242,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,50.0,0.9427750729794147,0.9427750729794147,57,54.0,31,27.0,46,50.0,3.0,4.0,-4.0,-4.0
+patient0243,test,publisher_original,ge55,Medium,ok,invalid value encountered in divide,,55.0,0.9561025751893629,0.9561025751893629,77,75.0,37,34.0,52,55.0,2.0,3.0,-3.0,-3.0
+patient0246,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,48.0,0.9386813243856584,0.9386813243856584,96,86.0,44,45.0,54,48.0,10.0,-1.0,6.0,6.0
+patient0248,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,50.0,0.8958860062418853,0.8958860062418853,80,74.0,53,37.0,34,50.0,6.0,16.0,-16.0,-16.0
+patient0251,test,publisher_original,ge55,Medium,ok,invalid value encountered in divide,,56.0,0.9341910167893841,0.9341910167893841,84,82.0,35,36.0,58,56.0,2.0,-1.0,2.0,2.0
+patient0252,test,publisher_original,le45,Medium,ok,invalid value encountered in divide,,43.0,0.9381868567047318,0.9381868567047318,78,69.0,43,39.0,45,43.0,9.0,4.0,2.0,2.0
+patient0254,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,46.0,0.9432311060541869,0.9432311060541869,108,103.0,56,56.0,48,46.0,5.0,0.0,2.0,2.0
+patient0258,test,publisher_original,gt45_lt55,Poor,ok,invalid value encountered in divide,,46.0,0.9454885243000752,0.9454885243000752,103,106.0,66,57.0,36,46.0,-3.0,9.0,-10.0,-10.0
+patient0260,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,52.0,0.9542737377580552,0.9542737377580552,91,86.0,46,41.0,49,52.0,5.0,5.0,-3.0,-3.0
+patient0261,test,publisher_original,gt45_lt55,Medium,ok,invalid value encountered in divide,,46.0,0.9320038921983181,0.9320038921983181,55,56.0,31,30.0,44,46.0,-1.0,1.0,-2.0,-2.0
+patient0262,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,41.0,0.9199668170248126,0.9199668170248126,81,71.0,44,42.0,46,41.0,10.0,2.0,5.0,5.0
+patient0263,test,publisher_original,ge55,Medium,ok,invalid value encountered in divide,,67.0,0.9333040006197411,0.9333040006197411,61,60.0,23,20.0,62,67.0,1.0,3.0,-5.0,-5.0
+patient0266,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,26.0,0.9123753798199079,0.9123753798199079,182,137.0,126,102.0,31,26.0,45.0,24.0,5.0,5.0
+patient0269,test,publisher_original,gt45_lt55,Poor,ok,invalid value encountered in divide,,49.0,0.9420560635884234,0.9420560635884234,161,167.0,84,85.0,48,49.0,-6.0,-1.0,-1.0,-1.0
+patient0273,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,26.0,0.8972213772433397,0.8972213772433397,52,53.0,33,39.0,37,26.0,-1.0,-6.0,11.0,11.0
+patient0275,test,publisher_original,gt45_lt55,Poor,ok,invalid value encountered in divide,,46.0,0.9017727846977679,0.9017727846977679,76,69.0,38,37.0,50,46.0,7.0,1.0,4.0,4.0
+patient0276,test,publisher_original,le45,Poor,ok,invalid value encountered in divide,,30.0,0.9420297290472943,0.9420297290472943,246,269.0,184,189.0,25,30.0,-23.0,-5.0,-5.0,-5.0

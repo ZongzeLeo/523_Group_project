@@ -1,0 +1,27 @@
+{
+  "augmentation": {
+    "gamma_max": 1.2,
+    "gamma_min": 0.8,
+    "horizontal_flip_probability": 0.5,
+    "noise_std": 0.02,
+    "rotation_degrees": 12.0,
+    "scale_max": 1.1,
+    "scale_min": 0.9,
+    "translation_fraction": 0.06
+  },
+  "base_channels": 24,
+  "batch_size": 16,
+  "early_stopping_patience": 20,
+  "learning_rate": 0.001,
+  "loss": "0.5 valid-pixel BCE + 0.5 mean per-frame soft Dice loss",
+  "lr_factor": 0.5,
+  "lr_patience": 5,
+  "max_epochs": 100,
+  "min_learning_rate": 1e-05,
+  "normalization": "group",
+  "postprocessing": "native threshold, largest 8-connected component, fill enclosed holes",
+  "seed": 523,
+  "selection": "highest mean validation model-grid hard Dice; never test labels or EF",
+  "threshold": 0.5,
+  "weight_decay": 0.0001
+}

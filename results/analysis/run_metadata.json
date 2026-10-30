@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "frames.csv": "531ed1b3e622a034eb91179b1d5cf4d3d7a6de8956e06c8b9e9ef04cc8a7bfce",
+    "geometry_metrics.csv": "8cb9a83b365b75eb9e31aab17af7920251a8814bd354e0d44c828f9792dcb7b3",
+    "patients.csv": "618b5350fd42ecd5db1c24f0c0f5d5adc154f3a781ced7e709143d25e2e51996",
+    "segmentation_metrics.csv": "2f5af298d59a78dd51eae5dafbee0f051c7054c42d504240582e1a1de01311b9",
+    "summary.json": "170d9673a428862e5ebffa7aeac66f3f12e41a26a54504346605d2c3ce71f6ca"
+  },
+  "checkpoint_sha256": "8e26e06eab6f58ed59d37cb6ac092d85c45a4ddcf78593f85607ba6b193700aa",
+  "code_sha256": {
+    "analysis/run.py": "5d17623a76e516e183277f55ac0bd4c6ff06efbcb2d3815d28e7240284f51481",
+    "analysis/statistics.py": "7ac0c3b0884c37ddbdc30bd97106478d50915b31e65b3686af9819746ddec9c5",
+    "geometry/publisher.py": "ac9e746fffb6b8699b333d6b2aceb8e8e905c1806aa3779e426bc5435901ede2",
+    "segmentation/metrics.py": "59bdbfa971e69accc3041c12290705443dba8bf5ed1d190b63b47665200c7975"
+  },
+  "completed_utc": "2026-10-30T06:51:28.078749+00:00",
+  "data_identity": {
+    "preprocessing.json": "b3b26be0cad10824b18ae57a89ed7363f3eea40a73a06ef0ad71a014823fdeab",
+    "source_hashes.json": "6658477ab07289e79cc34ee9832060de0a7f78c87eeaca24a5fecef4d8d22224",
+    "splits.csv": "3a682c50f79c665a6f7aafa2f63322a8fae90de1ccca605742fbb31684781de8"
+  },
+  "expert_metadata_sha256": "ea3c1638e6feefcdf3bfc35cca7a6f91053c76156f81d477d19ec4dae2151bce",
+  "prediction_metadata_sha256": "dc2d5a730c956ad3d0fcda508505051d9da26decba5e2c22f0572ee8006c8cb1",
+  "prepared_metadata_sha256": "ed825a098280a086e9d49a5805aa2798b9d72986cd20477606afb0dcce92b22e",
+  "publisher_notebook_sha256": "09cef7321d43a4986089563b088af1ffd18a93de5c545e84a27f01311c3a4c0c",
+  "status": "complete"
+}
