@@ -4,6 +4,8 @@ This project evaluates how left ventricular (LV) segmentation errors propagate
 to ejection fraction (EF) estimates in CAMUS. Expert masks first establish
 computational consistency with the publisher's volume calculation. A GroupNorm
 U-Net then supplies predicted masks to the same calculation.
+Controlled contour perturbations compare its sensitivity with phase-specific
+Simpson and a defined biplane area-length model.
 
 ![Expert-mask reproduction, LV segmentation, and integrated EF estimation](results/figures/overview.png)
 
@@ -30,6 +32,10 @@ percentage points.
 - [Geometry reproduction](geometry/README.md): unchanged publisher functions.
 - [Segmentation](segmentation/README.md): GroupNorm architecture, training, and inference.
 - [Analysis](analysis/README.md): methods, results, and figures.
+- [Controlled-error study](results/sensitivity_v1/REPORT.md): 55 scenarios per
+  patient, three geometric methods, observed-error analysis, and seven figures.
+- [Perturbation protocol](docs/perturbation_protocol.md): physical interventions,
+  paired comparisons, and patient-level uncertainty.
 - [Reproduction instructions](docs/reproduction.md): dependencies and complete commands.
 
 The saved code, checkpoint, tables, and figures can be checked without downloading

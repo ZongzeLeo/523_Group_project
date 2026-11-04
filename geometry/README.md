@@ -29,3 +29,24 @@ The [patient measurements](../results/geometry/patients.csv) and
 [summary](../results/geometry/summary.json) retain every patient. Warnings from
 degenerate candidate contour chords in the original routine are recorded; all
 reported test volumes and EF values are finite and valid.
+
+## Secondary geometric methods
+
+The [controlled-error study](../results/sensitivity_v1/REPORT.md) also evaluates
+two previously frozen mask-based methods in `comparators.py`. Both detect the
+basal closure and farthest contour point on the native physical grid. They use
+the longer view axis separately at ED and ES and retain continuous volumes/EF:
+
+* Phase-specific Simpson: `V = pi/4 * max(L2,L4)/20 * sum(d2_i*d4_i)/1000`.
+* Biplane ellipsoid area-length: `V = 8*A2*A4/(3*pi*min(L2,L4))/1000`.
+
+Lengths and areas are in mm and mm squared; volumes are in mL. The area-length
+variant is explicitly defined for paired apical views. These conventions differ
+from the original publisher calculation. Their numerical implementation was
+copied from the existing local comparison and checked against all 150 archived
+patient-method results. See the [protocol](../docs/perturbation_protocol.md) for
+landmark assumptions, topology checks, and interpretation.
+
+`publisher_profiles.py` reuses the original notebook's per-frame outputs across
+perturbation scenarios. It passes copies into the original volume function and
+checks against complete original calls; numerical notebook functions are unchanged.

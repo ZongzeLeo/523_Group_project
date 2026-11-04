@@ -1,0 +1,38 @@
+{
+  "area_changes_mm2": {
+    "2CH_ED": -19.636847787191392,
+    "4CH_ED": -22.103311760461807
+  },
+  "baseline": {
+    "ed_diameter_product_sum_mm2": 48436.609235082375,
+    "original_rounded_edv_ml": 167,
+    "original_rounded_ef_pct": 40,
+    "original_rounded_esv_ml": 101,
+    "shared_step_mm": 4.379479475022583,
+    "unrounded_edv_from_profiles_ml": 166.6042630091697
+  },
+  "code_sha256": "f2d51d933efe274b36b43632db11075f2634b4a4726b1fb51c3e04c5513a8de9",
+  "cohort": {
+    "edv_decreased": 5,
+    "edv_increased": 24,
+    "edv_unchanged": 21,
+    "patients": 50
+  },
+  "diameter_product_ratio": 1.024118666640553,
+  "interpretation": "The cut reduces native area but redetected axes and resampled disk widths can increase the geometric volume estimate. This is a property of the published estimator, not an increase in true cavity volume.",
+  "patient_id": "patient0027",
+  "perturbed": {
+    "ed_diameter_product_sum_mm2": 49604.83566642206,
+    "original_rounded_edv_ml": 169,
+    "original_rounded_ef_pct": 41,
+    "original_rounded_esv_ml": 100,
+    "shared_step_mm": 4.326742275329083,
+    "unrounded_edv_from_profiles_ml": 168.56791828854432
+  },
+  "publisher_notebook_sha256": "09cef7321d43a4986089563b088af1ffd18a93de5c545e84a27f01311c3a4c0c",
+  "scenario_id": "apical_truncation_p2mm_both_ED",
+  "selection": "First patient by ID with a positive EDV response; post hoc numerical diagnostic",
+  "source_results_metadata_sha256": "8e76bd202c70af23c2af80b839b9079057d55db50b6a731828afedc5688dd958",
+  "status": "passed",
+  "step_ratio": 0.9879581123751636
+}

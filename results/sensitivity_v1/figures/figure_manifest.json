@@ -1,0 +1,45 @@
+{
+  "artifact_sha256": {
+    "association_matrix.png": "e1410b92fe2f2c642af0406e1ea21300ff68b0eb165ab58992a54f53df3f6970",
+    "association_matrix.svg": "d19c26d920d2b76bdeacff8dbdcb8acf3808f3aa06f23edaad4ef2f185d4ec63",
+    "largest_error_anatomy.png": "cf87ee0174f62befee320c7ac73036b8f1753c8b8f82afd1166d1600a5688aa6",
+    "largest_error_anatomy.svg": "3ed6c1f34cb79f8dbd5dd53155a545204f4f9f53de7aca70b4698daccb34218e",
+    "method_sensitivity.png": "9ab6ad2640821ca20ed31b821bd0d7b1172d707eed072205f3e2ef7e7252fac7",
+    "method_sensitivity.svg": "33365c93d537276fe27b056b0200607542e9241521170ae471e9b9d8c2807915",
+    "observed_error_associations.png": "a2d9b7e53d6877436887e5564670c3e70376164eb4781903b29f8ee0b45aae49",
+    "observed_error_associations.svg": "f8593298ea85e2c96bd07241effadafd179a8372388c8b9e6cab01a83bc8f156",
+    "perturbation_overlays.png": "19962d8504d0efbbe89258cfb0e114e65b40963527775abbf8c698fbdfc11410",
+    "perturbation_overlays.svg": "b9452dbb597ee8e9abffc09aa76cf404eb4bc2cea09e2eaed3b258ccbc7237d7",
+    "rasterization_failures.png": "c0fb98299fa99dc715c13431af0b860fe2a2258a12cf231fd0148a9dd838fca3",
+    "rasterization_failures.svg": "ba0f4f307a8af0f851f2be4ea7498faeaf73017e84c3ad1f21efc78e39f5cf46",
+    "sensitivity_curves.png": "f2e504c0bfabab64deee85ece0fc897045fa2c9ae68d22dc63a60f0a429dfc28",
+    "sensitivity_curves.svg": "f3fef7ded17e1a414fe1b926dc8bb0efd06e620eee9398c2bc11fd1b60bd5ff3"
+  },
+  "failed_frame_variants": [
+    "patient0187_2CH_ED:basal_displacement:-2.0",
+    "patient0275_4CH_ED:basal_displacement:-2.0"
+  ],
+  "outlier_patients": [
+    "patient0217",
+    "patient0241",
+    "patient0248"
+  ],
+  "outlier_selection": "Three largest original absolute EF errors; tie by patient ID",
+  "plotting_code_sha256": "d4671bf48a3aa541755d5014bc887c11dd8c52491ed5b049b8628012c4093cb4",
+  "representative_patient": "patient0269",
+  "representative_selection": "Closest to median patient-mean Dice; tie by patient ID",
+  "source_artifact_sha256": {
+    "associations.csv": "179e5ef824800c13e21ca99f56d2ffd291f033d8e20eb662d2d95cca819c1356",
+    "config.json": "061e8a759b6d9cdce1e04882b7534f600cd6d6bb53e8de4635829c210d874018",
+    "method_contrasts.csv": "615ce594e93d40cf3ee6f75cf4e26ef4d7ae624e59847d10cb734793109077bd",
+    "observed_comparison.csv": "5be2fbf69f8f32fa30e77a65f8f3322ab8fed92118263b9e3f9cdb413f615a88",
+    "observed_frames.csv": "7b5ffd9063bed3892b2548044e4e06eb5f948d78ae5164eceea5f153322c9cfd",
+    "observed_patients.csv": "f586cf8c74d6df0526a0aa81d09ff8366286e641fac9b1c7503f676eeb7814f2",
+    "patients.csv": "1fa5e75a3e982ac5ecca008c1c8967de44dd9463490841859feb5157685e2918",
+    "perturbation_frames.csv": "532b006e4b8db81a4391eb56bf6f4e3a245a1c17c1b0805e0a4820e5885992f9",
+    "scenarios.csv": "79442fe348e86bae42d0d3ed4cf1cb2da5b961dc4089cf99c14927f9f34e0088",
+    "sensitivity_summary.csv": "ec1fe170596c6a5b327701f742cab4df13426266231c58a19bbc9c1669a85daa",
+    "summary.json": "6e8c041bfb6e9ebfd15658ca924a25c1d65c722acac8f24ce9b420c1c40de33c"
+  },
+  "source_results_metadata_sha256": "8e76bd202c70af23c2af80b839b9079057d55db50b6a731828afedc5688dd958"
+}

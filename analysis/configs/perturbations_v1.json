@@ -1,0 +1,14 @@
+{
+  "protocol_version": 1,
+  "split": "test",
+  "apical_truncation_mm": [1.0, 2.0],
+  "basal_displacement_mm": [-2.0, -1.0, 1.0, 2.0],
+  "basal_taper_mm": 10.0,
+  "view_scopes": ["2CH", "4CH", "both"],
+  "phase_scopes": ["ED", "ES", "both"],
+  "methods": ["publisher_original", "simpson_biplane", "area_length_biplane_ellipsoid"],
+  "bootstrap_repetitions": 2000,
+  "seed": 523,
+  "prediction_threshold": 0.5,
+  "notes": "Fixed descriptive experiment after baseline evaluation; no training or test-based tuning. Basal positive means inward toward apex."
+}

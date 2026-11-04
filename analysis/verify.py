@@ -92,6 +92,9 @@ def verify(root, predictions=None):
     result = {'status': 'passed', 'verified_release_files': len(release['files_sha256']),
               'expert_exact_matches': 50, 'test_patients': 50, 'native_frames': 200,
               'mean_dice': dice, 'ef_mae_pp': mae, 'prediction_files_checked': checked_predictions}
+    if (root / 'results/sensitivity_v1/run_metadata.json').exists():
+        from .verify_sensitivity import verify as verify_sensitivity
+        result['controlled_error_analysis'] = verify_sensitivity(root)
     return result
 
 

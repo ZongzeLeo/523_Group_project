@@ -58,3 +58,24 @@ hashes in the [figure manifest](../results/figures/figure_manifest.json).
 python -m analysis.run
 python -m analysis.figures
 ```
+
+## Controlled errors and geometric-method comparison
+
+The [completed sensitivity study](../results/sensitivity_v1/REPORT.md) applies
+apical cuts and local basal displacements to expert masks under a
+[fixed physical protocol](../docs/perturbation_protocol.md). It evaluates 55
+scenarios in 50 patients with three methods, retaining all 8,250 attempts and
+150 unchanged controls. The publisher method returned all 2,750 estimates;
+16 secondary-method evaluations were rejected after two resampled masks
+developed single-pixel holes. The report includes the failure audit.
+
+The study also reproduces the archived three-method baseline, relates observed
+area/axis/landmark discrepancies to EF error, and decomposes the largest EF
+errors into EDV, ESV, and rounding contributions. Stratified tables, paired
+bootstrap intervals, and all prespecified associations accompany seven figures.
+
+```bash
+python -m analysis.verify_sensitivity
+```
+
+Use the result paths in the [reproduction instructions](../docs/reproduction.md#controlled-error-analysis).

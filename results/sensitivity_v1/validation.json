@@ -1,0 +1,56 @@
+{
+  "archived_comparison": {
+    "frame_rows_matched": 200,
+    "patient_rows_matched": 150,
+    "source_sha256": {
+      "frames.csv": "f60d13b3b7aea2ef082ddb8b15b67ccb6b6c3b2ce8a740179cc97563b28b0405",
+      "patients.csv": "cc433012d665de2156ca5f337b3255d17bfc9e87db466051fea5a93c83599180"
+    }
+  },
+  "associations_independently_recalculated": 588,
+  "cached_publisher_pilot": {
+    "archived_baselines_match": true,
+    "elapsed_seconds": 27.268771100003505,
+    "nonzero_scenarios_checked_against_original": 6,
+    "patient": "patient0027",
+    "rows": [
+      165,
+      28,
+      4,
+      3
+    ]
+  },
+  "checked_utc": "2026-11-04T18:37:26.735444+00:00",
+  "figure_files_checked": 14,
+  "frame_variant_rows": 1400,
+  "interpretation": "Ready within reviewed scope; exploratory internal-test analysis. Sixteen secondary-method failures remain explicitly reported.",
+  "methods": 3,
+  "paired_method_contrasts_checked": 495,
+  "patient_scenario_method_rows": 8250,
+  "patients": 50,
+  "published_baseline_patients_matched": 50,
+  "scenarios": 55,
+  "sensitivity_summary_rows_checked": 1155,
+  "status": "passed",
+  "unit_tests": {
+    "command": "python -m pytest -q --basetemp .work/pytest_complete_sensitivity_v1",
+    "failed": 0,
+    "junit_sha256": "7c3b61acf825b73713c53352f0d75d3663f1ad46ce38b467973945c2f8dd27db",
+    "passed": 75
+  },
+  "verification_code_sha256": "1dab17760e7045d79e394a6850f9b4740b47ff30acaf501bd5199b8125e91aa1",
+  "visual_review": {
+    "figures": [
+      "perturbation_overlays",
+      "sensitivity_curves",
+      "method_sensitivity",
+      "association_matrix",
+      "observed_error_associations",
+      "largest_error_anatomy",
+      "rasterization_failures"
+    ],
+    "findings": "Legible plots, physical coordinate overlays, explicit reduced coverage, and both one-pixel failure masks inspected.",
+    "native_overlay_panels": 26
+  },
+  "zero_control_rows": 150
+}

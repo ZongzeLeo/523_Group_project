@@ -79,3 +79,48 @@ Fresh preparation in the recorded GPU environment reproduced all 2,000 image,
 mask, and valid-region arrays exactly. NPZ container bytes differed across NumPy
 versions, while all 200 native prediction files and the patient-level results
 remained unchanged.
+
+## Controlled-error analysis
+
+The fixed [protocol](perturbation_protocol.md) uses the same test patients and
+published prediction files. No retraining is required. After data preparation
+and inference, run the extension in a new output directory:
+
+```bash
+python -m analysis.sensitivity --output outputs/sensitivity_reproduction --workers 8
+python -m analysis.sampling_audit --results outputs/sensitivity_reproduction
+python -m analysis.sensitivity_figures --results outputs/sensitivity_reproduction --output outputs/sensitivity_reproduction/figures
+python -m analysis.sensitivity_report --results outputs/sensitivity_reproduction
+python -m analysis.verify_sensitivity --results outputs/sensitivity_reproduction --receipt outputs/sensitivity_reproduction/validation.json
+```
+
+Use `--prepared` and `--predictions` to select existing input directories. The
+runner verifies the source hashes, fixed split, selected checkpoint, prediction
+manifest, and native arrays before reporting results. It evaluates 55 scenarios
+per patient with three methods and refuses to overwrite existing run outputs.
+The sampling audit investigates the observed non-monotonic volume response of
+the original estimator; it does not alter the main experiment.
+
+The committed [report](../results/sensitivity_v1/REPORT.md) includes 8,250
+attempts, 150 zero controls, 1,400 frame-variant audits, 588 prespecified
+associations including strata, and seven PNG/SVG figures. The main cohort run
+used Python 3.12.3, NumPy 1.26.4, SciPy 1.13.1, and scikit-image 0.23.2.
+The publisher returned all 2,750 estimates. Two synthetic one-pixel holes caused
+16 secondary-method rejections; those rows remain explicit and are never
+replaced by zero. Means and intervals use available numeric patient pairs,
+and paired method contrasts report their common coverage.
+
+Both `python -m analysis.verify` and `python -m analysis.verify_sensitivity`
+verify the saved extension without raw images using the Python standard library.
+The latter independently recalculates paired differences, summaries, method
+contrasts, rank correlations, and EF contribution identities. To also compare
+against the original local archive, pass
+`--archive ../evaluation/results/unet_v2_groupnorm_test` when that archive is
+available. The portable package does not require it.
+
+On Windows, a workspace-local pytest directory avoids sandbox temporary-file
+rename restrictions:
+
+```bash
+python -m pytest -q --basetemp .work/pytest
+```
