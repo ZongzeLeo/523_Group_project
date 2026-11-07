@@ -1,0 +1,59 @@
+{
+  "args": {
+    "data_root": "/data/scratch/users/sayeh/CAMUS/database_nifti",
+    "splits": "splits/splits.json",
+    "out_dir": "runs/unet_baseline",
+    "size": 256,
+    "base_ch": 32,
+    "epochs": 150,
+    "warmup_epochs": 5,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "patience": 30,
+    "num_workers": 8,
+    "seed": 42,
+    "no_amp": false
+  },
+  "splits_method": "split list from team_splits.csv (official CAMUS 400/50/50)",
+  "n_patients": {
+    "train": 400,
+    "val": 50,
+    "test": 50
+  },
+  "n_frames": {
+    "train": 1600,
+    "val": 200
+  },
+  "model": {
+    "arch": "UNet",
+    "depth": 5,
+    "base_channels": 32,
+    "n_classes": 4,
+    "n_params": 7762564
+  },
+  "loss": "cross-entropy + soft Dice (foreground classes, equal weight), both restricted to the valid field of view",
+  "optimizer": "AdamW(lr=0.001, weight_decay=0.0001, betas=(0.9, 0.999))",
+  "schedule": "linear warmup 5 epochs, then cosine decay to 0",
+  "mixed_precision": "torch.bfloat16",
+  "augmentation": "rotation \u00b110\u00b0, scale 0.9\u20131.1, translation \u00b15%, gamma 0.7\u20131.5, contrast \u00d70.85\u20131.15, brightness \u00b10.1, Gaussian noise \u03c3\u22640.05; no flips",
+  "preprocessing": "intensities / 255; isotropic physical-aspect-preserving letterbox into 256x256 (images bilinear, masks nearest); per-image z-score over the valid field of view",
+  "hardware": {
+    "python": "3.12.13",
+    "torch": "2.12.0",
+    "cuda_available": true,
+    "cpu_count_visible": 8,
+    "hostname": "rcl-nv2",
+    "slurm_job_id": "39640",
+    "gpu_name": "NVIDIA B200 MIG 3g.90gb",
+    "gpu_memory_gb": 95.6,
+    "cuda": "13.0",
+    "cudnn": 92000
+  },
+  "result": {
+    "best_epoch": 41,
+    "best_val_dice_lv": 0.9416484236717224,
+    "epochs_run": 72,
+    "train_time_min": 4.2
+  }
+}

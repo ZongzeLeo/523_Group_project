@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/data/scratch/users/sayeh/elec523_project/make_splits.py", line 19, in <module>
+    from common import QUALITY_ORDER, VIEWS, patient_ids, patient_meta
+  File "/data/scratch/users/sayeh/elec523_project/common.py", line 11, in <module>
+    import nibabel as nib
+ModuleNotFoundError: No module named 'nibabel'

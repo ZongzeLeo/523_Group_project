@@ -1,0 +1,1 @@
+/home/sayeh.oloumi/miniconda3/envs/test_env/etc/conda/activate.d/~cuda-nvcc_activate.sh: line 48: NVCC_PREPEND_FLAGS: unbound variable

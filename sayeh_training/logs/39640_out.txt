@@ -1,0 +1,176 @@
+Fri Nov  6 16:08:26 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.91.07              Driver Version: 595.91.07      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA B200                    On  |   00000000:1B:00.0 Off |                   On |
+| N/A   34C    P0            283W / 1000W |   10699MiB / 183359MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |              Shared Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                Shared BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    2   0   0  |              46MiB / 91136MiB    | 70      0 |  6   0    3    0    3 |
+|                  |               0MiB / 39503MiB    |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+split list from team_splits.csv (official CAMUS 400/50/50)
+split        test  train  val  All
+ef_category                       
+45-55          17    126   13  156
+<=45           23    199   27  249
+>=55           10     75   10   95
+All            50    400   50  500
+loaded 1600 train / 200 val frames in 12s
+{
+  "python": "3.12.13",
+  "torch": "2.12.0",
+  "cuda_available": true,
+  "cpu_count_visible": 8,
+  "hostname": "rcl-nv2",
+  "slurm_job_id": "39640",
+  "gpu_name": "NVIDIA B200 MIG 3g.90gb",
+  "gpu_memory_gb": 95.6,
+  "cuda": "13.0",
+  "cudnn": 92000
+}
+model params: 7,762,564
+ep   0 lr 2.00e-04 train 1.1255 val 0.6966 dice LV 0.8939 myo 0.7999 LA 0.8416 (5s)
+ep   1 lr 4.00e-04 train 0.5591 val 0.5358 dice LV 0.8680 myo 0.7743 LA 0.7593 (3s)
+ep   2 lr 6.00e-04 train 0.3950 val 0.3302 dice LV 0.9089 myo 0.8290 LA 0.8667 (3s)
+ep   3 lr 8.00e-04 train 0.3307 val 0.3440 dice LV 0.9027 myo 0.7974 LA 0.8505 (3s)
+ep   4 lr 1.00e-03 train 0.2940 val 0.2992 dice LV 0.8894 myo 0.8367 LA 0.8731 (3s)
+ep   5 lr 1.00e-03 train 0.2643 val 0.2425 dice LV 0.9187 myo 0.8549 LA 0.9003 (3s)
+ep   6 lr 1.00e-03 train 0.2500 val 0.2324 dice LV 0.9227 myo 0.8637 LA 0.8952 (3s)
+ep   7 lr 1.00e-03 train 0.2390 val 0.2269 dice LV 0.9312 myo 0.8630 LA 0.9001 (3s)
+ep   8 lr 9.99e-04 train 0.2234 val 0.2211 dice LV 0.9318 myo 0.8636 LA 0.9017 (3s)
+ep   9 lr 9.98e-04 train 0.2188 val 0.2444 dice LV 0.9244 myo 0.8424 LA 0.8995 (3s)
+ep  10 lr 9.97e-04 train 0.2170 val 0.2277 dice LV 0.9324 myo 0.8702 LA 0.8787 (3s)
+ep  11 lr 9.96e-04 train 0.2133 val 0.2271 dice LV 0.9266 myo 0.8545 LA 0.9085 (3s)
+ep  12 lr 9.94e-04 train 0.2138 val 0.2096 dice LV 0.9339 myo 0.8719 LA 0.9059 (3s)
+ep  13 lr 9.93e-04 train 0.2009 val 0.2191 dice LV 0.9256 myo 0.8581 LA 0.9160 (3s)
+ep  14 lr 9.91e-04 train 0.1971 val 0.2035 dice LV 0.9356 myo 0.8712 LA 0.9059 (3s)
+ep  15 lr 9.88e-04 train 0.1931 val 0.2078 dice LV 0.9351 myo 0.8654 LA 0.9166 (3s)
+ep  16 lr 9.86e-04 train 0.1864 val 0.2060 dice LV 0.9371 myo 0.8730 LA 0.9052 (3s)
+ep  17 lr 9.83e-04 train 0.1855 val 0.2090 dice LV 0.9354 myo 0.8705 LA 0.9116 (3s)
+ep  18 lr 9.80e-04 train 0.1859 val 0.2054 dice LV 0.9323 myo 0.8662 LA 0.9160 (3s)
+ep  19 lr 9.77e-04 train 0.1798 val 0.2010 dice LV 0.9359 myo 0.8711 LA 0.9188 (3s)
+ep  20 lr 9.74e-04 train 0.1800 val 0.2035 dice LV 0.9311 myo 0.8728 LA 0.9205 (3s)
+ep  21 lr 9.70e-04 train 0.1741 val 0.1988 dice LV 0.9383 myo 0.8744 LA 0.9135 (3s)
+ep  22 lr 9.66e-04 train 0.1696 val 0.2128 dice LV 0.9236 myo 0.8685 LA 0.9106 (3s)
+ep  23 lr 9.62e-04 train 0.1670 val 0.2054 dice LV 0.9370 myo 0.8744 LA 0.9070 (3s)
+ep  24 lr 9.58e-04 train 0.1654 val 0.2151 dice LV 0.9352 myo 0.8717 LA 0.9004 (3s)
+ep  25 lr 9.54e-04 train 0.1981 val 0.2194 dice LV 0.9371 myo 0.8712 LA 0.8905 (3s)
+ep  26 lr 9.49e-04 train 0.1827 val 0.2107 dice LV 0.9355 myo 0.8688 LA 0.9030 (3s)
+ep  27 lr 9.44e-04 train 0.1696 val 0.2095 dice LV 0.9336 myo 0.8670 LA 0.9127 (3s)
+ep  28 lr 9.39e-04 train 0.1625 val 0.2017 dice LV 0.9361 myo 0.8762 LA 0.9099 (3s)
+ep  29 lr 9.34e-04 train 0.1582 val 0.2038 dice LV 0.9354 myo 0.8734 LA 0.9118 (3s)
+ep  30 lr 9.28e-04 train 0.1566 val 0.1955 dice LV 0.9391 myo 0.8775 LA 0.9166 (3s)
+ep  31 lr 9.23e-04 train 0.1530 val 0.2108 dice LV 0.9350 myo 0.8684 LA 0.9083 (3s)
+ep  32 lr 9.17e-04 train 0.1497 val 0.1989 dice LV 0.9400 myo 0.8785 LA 0.9088 (3s)
+ep  33 lr 9.11e-04 train 0.1451 val 0.2011 dice LV 0.9392 myo 0.8766 LA 0.9121 (3s)
+ep  34 lr 9.05e-04 train 0.1439 val 0.2165 dice LV 0.9342 myo 0.8731 LA 0.9010 (3s)
+ep  35 lr 8.98e-04 train 0.1440 val 0.2005 dice LV 0.9396 myo 0.8781 LA 0.9108 (3s)
+ep  36 lr 8.91e-04 train 0.1407 val 0.2001 dice LV 0.9401 myo 0.8766 LA 0.9144 (3s)
+ep  37 lr 8.85e-04 train 0.1364 val 0.2040 dice LV 0.9389 myo 0.8749 LA 0.9138 (3s)
+ep  38 lr 8.78e-04 train 0.1349 val 0.2044 dice LV 0.9394 myo 0.8760 LA 0.9105 (3s)
+ep  39 lr 8.70e-04 train 0.1325 val 0.2007 dice LV 0.9407 myo 0.8785 LA 0.9114 (3s)
+ep  40 lr 8.63e-04 train 0.1302 val 0.2028 dice LV 0.9403 myo 0.8776 LA 0.9103 (3s)
+ep  41 lr 8.55e-04 train 0.1270 val 0.2051 dice LV 0.9416 myo 0.8769 LA 0.9105 (3s)
+ep  42 lr 8.48e-04 train 0.1268 val 0.2085 dice LV 0.9409 myo 0.8770 LA 0.9040 (3s)
+ep  43 lr 8.40e-04 train 0.1250 val 0.2084 dice LV 0.9365 myo 0.8685 LA 0.9116 (3s)
+ep  44 lr 8.32e-04 train 0.1250 val 0.2160 dice LV 0.9394 myo 0.8717 LA 0.9009 (3s)
+ep  45 lr 8.24e-04 train 0.1221 val 0.2105 dice LV 0.9391 myo 0.8769 LA 0.9057 (3s)
+ep  46 lr 8.15e-04 train 0.1184 val 0.2120 dice LV 0.9404 myo 0.8747 LA 0.9090 (3s)
+ep  47 lr 8.07e-04 train 0.1157 val 0.2049 dice LV 0.9385 myo 0.8787 LA 0.9147 (3s)
+ep  48 lr 7.98e-04 train 0.1140 val 0.2054 dice LV 0.9416 myo 0.8803 LA 0.9138 (3s)
+ep  49 lr 7.89e-04 train 0.1137 val 0.2273 dice LV 0.9387 myo 0.8705 LA 0.9083 (3s)
+ep  50 lr 7.81e-04 train 0.1141 val 0.2047 dice LV 0.9396 myo 0.8785 LA 0.9199 (3s)
+ep  51 lr 7.72e-04 train 0.1078 val 0.2156 dice LV 0.9389 myo 0.8756 LA 0.9137 (3s)
+ep  52 lr 7.62e-04 train 0.1066 val 0.2175 dice LV 0.9394 myo 0.8742 LA 0.9127 (3s)
+ep  53 lr 7.53e-04 train 0.1160 val 0.2222 dice LV 0.9392 myo 0.8735 LA 0.8980 (3s)
+ep  54 lr 7.44e-04 train 0.1097 val 0.2161 dice LV 0.9403 myo 0.8772 LA 0.9133 (3s)
+ep  55 lr 7.34e-04 train 0.1048 val 0.2168 dice LV 0.9399 myo 0.8743 LA 0.9094 (3s)
+ep  56 lr 7.25e-04 train 0.1093 val 0.2230 dice LV 0.9377 myo 0.8728 LA 0.9067 (3s)
+ep  57 lr 7.15e-04 train 0.1056 val 0.2228 dice LV 0.9404 myo 0.8754 LA 0.9070 (3s)
+ep  58 lr 7.05e-04 train 0.0994 val 0.2236 dice LV 0.9404 myo 0.8740 LA 0.9122 (3s)
+ep  59 lr 6.95e-04 train 0.0996 val 0.2268 dice LV 0.9400 myo 0.8744 LA 0.9054 (3s)
+ep  60 lr 6.85e-04 train 0.0967 val 0.2264 dice LV 0.9399 myo 0.8751 LA 0.9100 (3s)
+ep  61 lr 6.75e-04 train 0.0944 val 0.2266 dice LV 0.9379 myo 0.8737 LA 0.9137 (3s)
+ep  62 lr 6.65e-04 train 0.0933 val 0.2225 dice LV 0.9409 myo 0.8758 LA 0.9139 (3s)
+ep  63 lr 6.55e-04 train 0.0925 val 0.2300 dice LV 0.9410 myo 0.8765 LA 0.9095 (3s)
+ep  64 lr 6.44e-04 train 0.0897 val 0.2393 dice LV 0.9388 myo 0.8742 LA 0.9098 (3s)
+ep  65 lr 6.34e-04 train 0.0901 val 0.2359 dice LV 0.9376 myo 0.8707 LA 0.9111 (3s)
+ep  66 lr 6.23e-04 train 0.0882 val 0.2379 dice LV 0.9387 myo 0.8763 LA 0.9095 (3s)
+ep  67 lr 6.13e-04 train 0.0849 val 0.2347 dice LV 0.9390 myo 0.8746 LA 0.9093 (3s)
+ep  68 lr 6.02e-04 train 0.0837 val 0.2371 dice LV 0.9393 myo 0.8728 LA 0.9119 (3s)
+ep  69 lr 5.92e-04 train 0.0842 val 0.2331 dice LV 0.9397 myo 0.8755 LA 0.9124 (3s)
+ep  70 lr 5.81e-04 train 0.0818 val 0.2383 dice LV 0.9405 myo 0.8776 LA 0.9084 (3s)
+ep  71 lr 5.70e-04 train 0.0809 val 0.2411 dice LV 0.9393 myo 0.8755 LA 0.9091 (3s)
+early stopping at epoch 71
+best val LV Dice 0.9416 at epoch 41
+wrote 400 predictions to runs/unet_baseline/predictions
+# LV segmentation results (test split, 50 patients)
+
+## Overall
+
+| all   |   n |   dice_mean |   dice_sd |   dice_median |   hd_mean_mm |   hd_sd_mm |   hd95_mean_mm |   hd95_sd_mm |   masd_mean_mm |   masd_sd_mm |
+|:------|----:|------------:|----------:|--------------:|-------------:|-----------:|---------------:|-------------:|---------------:|-------------:|
+| all   | 200 |       0.937 |     0.034 |         0.946 |        4.562 |      2.204 |          3.719 |        1.894 |          1.408 |        0.660 |
+
+## By view and phase
+
+| view   | phase   |   n |   dice_mean |   dice_sd |   dice_median |   hd_mean_mm |   hd_sd_mm |   hd95_mean_mm |   hd95_sd_mm |   masd_mean_mm |   masd_sd_mm |
+|:-------|:--------|----:|------------:|----------:|--------------:|-------------:|-----------:|---------------:|-------------:|---------------:|-------------:|
+| 2CH    | ED      |  50 |       0.943 |     0.023 |         0.949 |        4.785 |      2.561 |          4.002 |        2.180 |          1.526 |        0.700 |
+| 2CH    | ES      |  50 |       0.914 |     0.047 |         0.925 |        5.383 |      2.853 |          4.402 |        2.370 |          1.667 |        0.839 |
+| 4CH    | ED      |  50 |       0.954 |     0.018 |         0.956 |        4.203 |      1.562 |          3.239 |        1.420 |          1.193 |        0.472 |
+| 4CH    | ES      |  50 |       0.935 |     0.028 |         0.941 |        3.875 |      1.113 |          3.234 |        1.075 |          1.246 |        0.444 |
+
+## By LVEF category
+
+| ef_category   |   n |   dice_mean |   dice_sd |   dice_median |   hd_mean_mm |   hd_sd_mm |   hd95_mean_mm |   hd95_sd_mm |   masd_mean_mm |   masd_sd_mm |
+|:--------------|----:|------------:|----------:|--------------:|-------------:|-----------:|---------------:|-------------:|---------------:|-------------:|
+| <=45          |  92 |       0.940 |     0.027 |         0.947 |        4.681 |      2.204 |          3.804 |        1.887 |          1.487 |        0.658 |
+| 45-55         |  68 |       0.934 |     0.037 |         0.944 |        4.803 |      2.486 |          3.918 |        2.159 |          1.396 |        0.732 |
+| >=55          |  40 |       0.933 |     0.041 |         0.942 |        3.875 |      1.489 |          3.187 |        1.273 |          1.248 |        0.501 |
+
+## By image quality
+
+| quality   |   n |   dice_mean |   dice_sd |   dice_median |   hd_mean_mm |   hd_sd_mm |   hd95_mean_mm |   hd95_sd_mm |   masd_mean_mm |   masd_sd_mm |
+|:----------|----:|------------:|----------:|--------------:|-------------:|-----------:|---------------:|-------------:|---------------:|-------------:|
+| Good      |  94 |       0.946 |     0.031 |         0.952 |        3.977 |      1.588 |          3.129 |        1.344 |          1.174 |        0.448 |
+| Medium    |  76 |       0.936 |     0.033 |         0.949 |        4.314 |      1.738 |          3.585 |        1.574 |          1.377 |        0.604 |
+| Poor      |  30 |       0.910 |     0.032 |         0.917 |        7.022 |      3.147 |          5.907 |        2.511 |          2.219 |        0.735 |
+
+## Raw vs post-processed (LV)
+
+| variant   |   n |   dice_mean |   dice_sd |   dice_median |   hd_mean_mm |   hd_sd_mm |   hd95_mean_mm |   hd95_sd_mm |   masd_mean_mm |   masd_sd_mm |
+|:----------|----:|------------:|----------:|--------------:|-------------:|-----------:|---------------:|-------------:|---------------:|-------------:|
+| post      | 200 |       0.937 |     0.034 |         0.946 |        4.562 |      2.204 |          3.719 |        1.894 |          1.408 |        0.660 |
+| raw       | 200 |       0.937 |     0.034 |         0.946 |        4.562 |      2.204 |          3.716 |        1.886 |          1.407 |        0.657 |
+
+## All structures (post-processed)
+
+| structure   |   n |   dice_mean |   dice_sd |   dice_median |   hd_mean_mm |   hd_sd_mm |   hd95_mean_mm |   hd95_sd_mm |   masd_mean_mm |   masd_sd_mm |
+|:------------|----:|------------:|----------:|--------------:|-------------:|-----------:|---------------:|-------------:|---------------:|-------------:|
+| la          | 200 |       0.907 |     0.074 |         0.928 |        5.960 |      6.712 |          5.022 |        5.846 |          1.760 |        1.419 |
+| lv_endo     | 200 |       0.937 |     0.034 |         0.946 |        4.562 |      2.204 |          3.719 |        1.894 |          1.408 |        0.660 |
+| lv_myo      | 200 |       0.875 |     0.045 |         0.885 |        5.854 |      2.769 |          4.170 |        1.887 |          1.607 |        0.667 |
+
+wrote results to runs/unet_baseline/eval

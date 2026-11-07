@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/data/scratch/users/sayeh/elec523_project/make_splits.py", line 108, in <module>
+    main()
+  File "/data/scratch/users/sayeh/elec523_project/make_splits.py", line 76, in main
+    meta = [patient_meta(args.data_root, pid) for pid in patient_ids(args.data_root)]
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/users/sayeh/elec523_project/common.py", line 33, in patient_ids
+    return sorted(p.name for p in Path(data_root).iterdir()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/users/sayeh/elec523_project/common.py", line 33, in <genexpr>
+    return sorted(p.name for p in Path(data_root).iterdir()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayeh.oloumi/miniconda3/envs/test_env/lib/python3.12/pathlib.py", line 1056, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/path/to/CAMUS/database_nifti'
