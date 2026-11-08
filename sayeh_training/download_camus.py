@@ -8,7 +8,7 @@ Usage (run on a node with internet access, e.g. the login node):
     python download_camus.py --out /data/scratch/users/<you>/CAMUS
 Then set DATA_ROOT=<out>/database_nifti in train_and_eval.sbatch.
 
-Please cite Leclerc et al., IEEE TMI 2019 when using CAMUS.
+Cite Leclerc et al., IEEE TMI 2019 when using CAMUS.
 """
 import argparse
 import json
