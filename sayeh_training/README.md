@@ -1,7 +1,7 @@
 # CAMUS baseline U-Net: LV segmentation + Dice analysis
 
 Baseline 2D U-Net trained on CAMUS ED/ES frames (2CH + 4CH, one model), with
-evaluation stratified by view/phase, LVEF category and image quality.
+evaluation stratified by view/phase, LVEF category, and image quality.
 
 ## Setup
 ```bash
