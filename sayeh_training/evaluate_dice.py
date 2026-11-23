@@ -83,23 +83,23 @@ def boxpanel(ax, groups, labels, ylabel):
 
 
 def plot(lv, path):
-    fig, axes = plt.subplots(2, 3, figsize=(12, 6.5), sharey="row")
+    fig, axes = plt.subplots(1, 3, figsize=(12, 6.5), sharey="row")
     vp = [(v, p) for v in VIEWS for p in PHASES]
     strat = [
-        ("View / phase", [f"{v} {p}" for v, p in vp],
+        ("View / Phase", [f"{v} {p}" for v, p in vp],
          [(lv.view == v) & (lv.phase == p) for v, p in vp]),
-        ("LVEF category (%)", [c for c in EF_ORDER if (lv.ef_category == c).any()],
+        ("LVEF Category (%)", [c for c in EF_ORDER if (lv.ef_category == c).any()],
          [lv.ef_category == c for c in EF_ORDER if (lv.ef_category == c).any()]),
-        ("Image quality", [q for q in Q_ORDER if (lv.quality == q).any()],
+        ("Image Quality", [q for q in Q_ORDER if (lv.quality == q).any()],
          [lv.quality == q for q in Q_ORDER if (lv.quality == q).any()]),
     ]
     for col, (title, labels, masks) in enumerate(strat):
-        boxpanel(axes[0, col], [lv.loc[m, "dice"].to_numpy() for m in masks], labels,
+        boxpanel(axes[col], [lv.loc[m, "dice"].to_numpy() for m in masks], labels,
                  "LV Dice" if col == 0 else "")
-        boxpanel(axes[1, col], [lv.loc[m, "hd_mm"].to_numpy() for m in masks], labels,
-                 "LV Hausdorff distance (mm)" if col == 0 else "")
-        axes[0, col].set_title(title, color=INK, fontsize=11, loc="left")
-    fig.suptitle("U-Net LV segmentation on CAMUS test set (post-processed masks)",
+        #boxpanel(axes[1, col], [lv.loc[m, "hd_mm"].to_numpy() for m in masks], labels,
+        #         "LV Hausdorff distance (mm)" if col == 0 else "")
+        axes[col].set_title(title, color=INK, fontsize=11, loc="left")
+    fig.suptitle("U-Net LV Segmentation on CAMUS Test Set (Post-Processed Masks)",
                  color=INK, fontsize=12, x=0.01, ha="left")
     fig.tight_layout()
     fig.savefig(path, dpi=200)
