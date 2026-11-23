@@ -1,27 +1,24 @@
 """LV volumes and EF from Sayeh's predicted masks, using the team repo's geometry code.
 
-By default runs only Simpson's biplane (--methods simpson). Available methods,
-each run on each test patient, on both the predicted masks and the
-CAMUS expert masks, so segmentation-induced errors can be read off directly:
-  publisher   : original CAMUS notebook calculation (geometry/publisher.py)
-  simpson     : phase-specific Simpson's biplane (geometry/comparators.py)
-  area_length : biplane area-length (geometry/comparators.py)
+Default: the CAMUS reference calculation (geometry/publisher.py), i.e. the original
+CAMUS notebook's Simpson's biplane, run unchanged. Applied to the expert masks it
+reproduces the CAMUS reference LVEF labels. Other methods: simpson (team's
+phase-specific Simpson's biplane, geometry/comparators.py) and area_length.
 
-Run from the REPO ROOT (so `geometry` and `data` import):
-    python sayeh_training/compute_volumes.py \
-        --data-root /data/scratch/users/sayeh/CAMUS/database_nifti \
-        --pred-dir sayeh_training/runs/unet_e80/predictions \
-        --splits sayeh_training/splits/splits.json \
-        --out sayeh_training/runs/unet_e80/eval/volumes_per_case.csv \
-        --case-table sayeh_training/runs/unet_e80/eval/per_case_results.csv
+Each method runs on both the predicted masks and the CAMUS expert masks, so
+predicted - expert isolates the segmentation-induced error. The CAMUS reference
+LVEF (Info_2CH.cfg) is added as `ref_ef_pct`, with `err_publisher_ef_vs_ref_pct`.
 
-Environment: simpson and area_length run in any env with scikit-image. The
-`publisher` method (only if requested) executes the original CAMUS notebook, which
-needs the repo's pinned versions (numpy<2.1, SimpleITK; see requirements.txt).
-With newer numpy it fails and its columns read "failed: ..."; simpson and
-area_length work either way. A separate env avoids touching test_env:
+Run from inside sayeh_training/ (geometry/ one folder up is found automatically):
+    python compute_volume_simpson.py --data-root /data/scratch/users/sayeh/CAMUS/database_nifti \
+        --pred-dir runs/unet_e80/predictions --splits splits/splits.json \
+        --out runs/unet_e80/eval/volumes_per_case.csv \
+        --case-table runs/unet_e80/eval/per_case_results.csv
+
+Environment: the CAMUS reference method executes the original notebook, which needs
+the repo's pinned versions (numpy<2.1, SimpleITK; see ../requirements.txt):
     conda create -n camus_geom python=3.12 -y && conda activate camus_geom
-    pip install -r requirements.txt pandas
+    pip install -r ../requirements.txt pandas
 
 Masks are loaded with nibabel (x, y axes) and transposed to (y, x) with spacing
 (x, y) in mm, matching the repo's data/native.py convention.
@@ -68,7 +65,8 @@ def measure_all(frames, methods):
         try:
             r = measure_publisher(frames)
             out.update(publisher_edv_ml=r["edv_ml"], publisher_esv_ml=r["esv_ml"],
-                       publisher_ef_pct=r["ef_before_final_rounding_pct"], publisher_status=r["status"])
+                       publisher_ef_pct=r["ef_before_final_rounding_pct"],
+                       publisher_ef_rounded_pct=r["ef_pct"], publisher_status=r["status"])
         except GeometryError as e:
             out.update(publisher_status=f"failed: {e}")
     comp = [m for m in methods if m in ("simpson", "area_length")]
@@ -87,16 +85,24 @@ def measure_all(frames, methods):
     return out
 
 
+def reference_ef(data_root, pid):
+    for line in (Path(data_root) / pid / "Info_2CH.cfg").read_text().splitlines():
+        key, _, val = line.partition(":")
+        if key.strip() in ("EF", "LVef"):
+            return float(val)
+    return np.nan
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-root", required=True)
-    ap.add_argument("--pred-dir", default="sayeh_training/runs/unet_e80/predictions")
-    ap.add_argument("--splits", default="sayeh_training/splits/splits.json")
+    ap.add_argument("--pred-dir", default="runs/unet_e80/predictions")
+    ap.add_argument("--splits", default="splits/splits.json")
     ap.add_argument("--split", default="test")
-    ap.add_argument("--methods", default="simpson",
-                    help="comma-separated from simpson, area_length, publisher (default: simpson)")
+    ap.add_argument("--methods", default="publisher",
+                    help="comma-separated from publisher, simpson, area_length (default: publisher = CAMUS reference)")
     ap.add_argument("--suffix", default="_pred", help="'_pred' (post-processed) or '_pred_raw'")
-    ap.add_argument("--out", default="sayeh_training/runs/unet_e80/eval/volumes_per_case.csv")
+    ap.add_argument("--out", default="runs/unet_e80/eval/volumes_per_case.csv")
     ap.add_argument("--case-table", default=None,
                     help="optional per_case_results.csv to merge with (writes *_with_volumes.csv)")
     args = ap.parse_args()
@@ -106,11 +112,12 @@ def main():
     if bad:
         ap.error(f"unknown methods {bad}; choose from {ALL_METHODS}")
     if "publisher" in methods and tuple(int(x) for x in np.__version__.split(".")[:2]) >= (2, 1):
-        print(f"note: numpy {np.__version__} >= 2.1, so the publisher method will fail (needs numpy<2.1)")
+        sys.exit(f"numpy {np.__version__} is too new for the CAMUS reference method (needs numpy<2.1). "
+                 "Activate the camus_geom env (see the docstring) and rerun.")
     pids = json.loads(Path(args.splits).read_text())[args.split]
     rows = []
     for i, pid in enumerate(pids, 1):
-        row = {"patient": pid}
+        row = {"patient": pid, "ref_ef_pct": reference_ef(args.data_root, pid)}
         sources = {
             "pred": {k: Path(args.pred_dir) / pid / f"{pid}_{k}{args.suffix}.nii.gz" for k in FRAMES},
             "gt": {k: Path(args.data_root) / pid / f"{pid}_{k}_gt.nii.gz" for k in FRAMES},
@@ -128,6 +135,12 @@ def main():
             p, g = f"pred_{method}_{q}", f"gt_{method}_{q}"
             if p in df and g in df:
                 df[f"err_{method}_{q}"] = df[p] - df[g]
+
+    if "pred_publisher_ef_pct" in df:
+        df["err_publisher_ef_vs_ref_pct"] = df["pred_publisher_ef_pct"] - df["ref_ef_pct"]
+    if "gt_publisher_ef_rounded_pct" in df:
+        ok = (df["gt_publisher_ef_rounded_pct"] == df["ref_ef_pct"].round()).sum()
+        print(f"check: expert-mask CAMUS calculation reproduces the reference LVEF for {ok}/{len(df)} patients")
 
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(args.out, index=False, float_format="%.3f")
