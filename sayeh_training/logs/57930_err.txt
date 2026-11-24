@@ -1,0 +1,12 @@
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 26.3.2
+    latest version: 26.5.3
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+WARNING: Cache entry deserialization failed, entry ignored
